@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Title Fonts",
+    "fonts": [
+      {
+        "name": "Play",
+        "style": "Regular",
+        "url": "https://fonts.google.com/specimen/Play"
+      },
+      {
+        "name": "Play",
+        "style": "Bold",
+        "url": "https://fonts.google.com/specimen/Play"
+      }
+    ]
+  },
+  {
+    "title": "Body Fonts",
+    "fonts": [
+      {
+        "name": "Lato",
+        "style": "Regular",
+        "url": "https://fonts.google.com/specimen/Lato"
+      },
+      {
+        "name": "Lato",
+        "style": "Bold",
+        "url": "https://fonts.google.com/specimen/Lato"
+      }
+    ]
+  },
+  {
+    "title": "Monospace Fonts",
+    "fonts": [
+      {
+        "name": "Victor Mono",
+        "style": "Regular",
+        "url": "https://fonts.google.com/specimen/Victor+Mono"
+      },
+      {
+        "name": "Victor Mono",
+        "style": "Bold",
+        "url": "https://fonts.google.com/specimen/Victor+Mono"
+      }
+    ]
+  }
+]

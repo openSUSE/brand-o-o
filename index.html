@@ -1,0 +1,79 @@
+---
+layout: markdown
+---
+<h1>Colours</h1>
+<div class="color-table">
+  <div class="circle title"></div>
+  <div class="name title">Name</div>
+  <div class="hex title">Hex</div>
+  <div class="rgb title">RGB</div>
+  <div class="pantone title">Pantone</div>
+  <div class="cmyk title">CMYK</div>
+  <div class="grayscale title">Grayscale</div>
+{% for color in site.data.colors %}
+  <div class="circle">
+    <div class="d-flex">
+      <span class="card p-3 rounded-0" style="--bs-card-bg: {{ color.hex }}"></span>
+      <div class="d-flex flex-column">
+      {% for tint in color.tints %}
+        <span class="card p-1 rounded-0" style="--bs-card-bg: {{ tint[1] }}"></span>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="name">{{ color.name }}</div>
+  <div class="hex">
+    <div class="individual-title">Hex</div>
+    {% include copy text=color.hex %}
+  </div>
+  <div class="rgb">
+    <div class="individual-title">RGB</div>
+    {% assign rgb = color.rgb | split: ", " %}
+    {% capture content %}
+    <div>R: {{ rgb[0] }}</div>
+    <div>G: {{ rgb[1] }}</div>
+    <div>B: {{ rgb[2] }}</div>
+    {% endcapture %}
+    {% include copy text=content copy=color.rgb %}
+  </div>
+  <div class="pantone">
+    <div class="individual-title">Pantone</div>
+    {% include copy text=color.pantone %}
+  </div>
+  <div class="cmyk">
+    <div class="individual-title">CMYK</div>
+    {% assign cmyk = color.cmyk | split: ", " %}
+    {% capture content %}
+    <div>C: {{ cmyk[0] }}</div>
+    <div>M: {{ cmyk[1] }}</div>
+    <div>Y: {{ cmyk[2] }}</div>
+    <div>K: {{ cmyk[3] }}</div>
+    {% endcapture %}
+    {% include copy text=content copy=color.cmyk %}
+  </div>
+  <div class="grayscale">
+    <div class="individual-title">Grayscale</div>
+    {% include copy text=color.grayscale %}
+  </div>
+{% endfor %}
+</div>
+<h1>Typography</h1>
+<div class="row">
+  <div class="col-md-3 col-12">
+    <p>Click on the examples to the right to download the specific font variants used.</p>
+    <p>The Play variants are used for titles and tag-lines.</p>
+    <p>Victor Mono variants are used for displaying code and preformatted text.</p>
+    <p>Lato variants are used for all other purposes.</p>
+  </div>
+{% for category in site.data.type %}
+  <div class="col">
+  <h5>{{ category.title }}</h5>
+  {% for font in category.fonts %}
+    <a href="{{ font.url }}" style="font-family: '{{ font.name }}'; font-weight: {{ font.style | downcase }}" class="btn btn-outline-success d-block border-0 text-start">
+      <div class="text-muted">{{ font.name }} {{ font.style }}</div>
+      <div class="fs-3">AaBbCc</div>
+    </a>
+  {% endfor %}
+  </div>
+{% endfor %}
+</div>

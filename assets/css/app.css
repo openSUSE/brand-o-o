@@ -1,0 +1,41 @@
+.color-table {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0.5rem 1rem;
+}
+
+.color-table .title, .color-table .individual-title {
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+}
+
+.color-table .individual-title {
+  display: none;
+}
+
+@media(max-width: 576px) {
+  .color-table {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .color-table .name {
+    font-family: "Play", sans-serif;
+    font-weight: bold;
+  }
+
+  .color-table .title {
+   display: none;
+  }
+
+  .color-table .individual-title {
+    display: block;
+  }
+
+  .color-table .name {
+    grid-column: span 4;
+  }
+}
+
+.copy {
+  cursor: pointer;
+}

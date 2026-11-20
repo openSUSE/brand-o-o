@@ -1,0 +1,1 @@
+<span class="copy" data-copyable="{{ include.copy | default: include.text }}">{{ include.text }}</a>
